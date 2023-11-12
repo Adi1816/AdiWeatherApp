@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Project</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a class="logo">
+            <center>Aditya's Weather App</center></a>
+    </header>
+
+
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter City Name" spellcheck="false">
+            <button><i class='bx bx-search-alt-2 bx-burst' ></i></button>
+            <!-- <button><img src="https://img.freepik.com/free-vector/magnifying-glass-checkered-background_1262-6424.jpg?w=1060&t=st=1699707255~exp=1699707855~hmac=e5195a7e8bfe7a0c2dbbb8a72a816f904144050c58a3e67981b6c9ead0655d71"></button> -->
+        </div>
+        <div class="error">
+            <p>Enter Corect Spelling, My Shakespeare</p>
+        </div>
+        <div class="weather">
+            <img src="images/rain.png" alt="" class="weather-icon">
+            <h1 class="temperature">22°C</h1>
+            <h2 class="city">New Delhi</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="">
+                    <div>
+                        <p class="humidity">30%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    const apiKey="208a65d1f047eb04d5e5876c924da169";
+    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+    const searchBox= document.querySelector(".search input");
+    const searchBtn= document.querySelector(".search button");
+    const weatherIcon= document.querySelector(".weather-icon");
+
+
+    async function checkWeather(city){
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        if(response.status == 404){
+            document.querySelector(".error").style.display="block";
+            document.querySelector(".weather").style.display="none";
+        }
+        else{
+            var data = await response.json();
+
+        document.querySelector(".city").innerHTML=data.name;
+        document.querySelector(".temperature").innerHTML=data.main.temp + "°c";
+        document.querySelector(".humidity").innerHTML=data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML=data.wind.speed + " kmph";
+
+        if(data.weather[0].main == "Clouds"){
+            weatherIcon.src= "images/clouds.png";
+        }
+        else if(data.weather[0].main == "Clear"){
+            weatherIcon.src= "images/clear.png";
+        }
+        else if(data.weather[0].main == "Rain"){
+            weatherIcon.src= "images/rain.png";
+        }
+        else if(data.weather[0].main == "Drizzle"){
+            weatherIcon.src= "images/drizzle.png";
+        }
+        else if(data.weather[0].main == "Mist"){
+            weatherIcon.src= "images/mist.png";
+        }
+        else if(data.weather[0].main == "Snow"){
+            weatherIcon.src= "images/snow.png";
+        }
+
+        document.querySelector(".weather").style.display="block";
+        document.querySelector(".error").style.display="none";
+
+        }
+    }
+
+    searchBtn.addEventListener("click", ()=>{
+        checkWeather(searchBox.value);
+    })
+
+</script>
+
+
+</body>
+</html>
