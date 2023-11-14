@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -24,7 +25,7 @@
    border-bottom: .1rem solid rgba(231, 25, 234, 0.2);
 }
 .logo {
-   font-size: 2.5rem;
+   font-size: 2rem;
    color: #fff;
    font-weight: 600;
    /* cursor: default; */
@@ -38,13 +39,13 @@
     max-width: 470px;
     background: linear-gradient(135deg, #cbff46, rgb(40, 166, 82));
     color: #fff;
-    margin: 150px auto 0;
+    margin: 200px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
  }
  .search{
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -66,7 +67,7 @@
     border: 0;
     outline: 0;
     background: #ebfffc;
-    border-radius: 90%;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     cursor: pointer;
