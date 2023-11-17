@@ -45,7 +45,8 @@
     text-align: center;
  }
  .search{
-    width: 90%;
+    padding: 10px 20px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
