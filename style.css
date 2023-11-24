@@ -41,7 +41,7 @@
     color: #fff;
     margin: 200px auto 0;
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 27px 25px;
     text-align: center;
  }
  .search{
@@ -69,21 +69,21 @@
     outline: 0;
     background: #ebfffc;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
  }
  .weather-icon{
    width: 170px;
-   margin-top: 20px;
+   margin-top: 10px;
  }
  .weather h1{
-   font-size: 80px;
+   font-size: 70px;
    font-weight: 500;
-   margin-top: -10px;
+   margin-top: -20px;
  }
  .weather h2{
-   font-size: 45px;
+   font-size: 40px;
    font-weight: 400;
    margin-top: -10px;
  }
@@ -91,7 +91,7 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 0 20px;
+   padding: -10 20px;
    margin-top: 50px;
  }
  .col{
