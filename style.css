@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@
    position: fixed;
    top: 0;
    width: 100%;
-   padding: 2rem 9%;
+   padding: 30px;
    background: rgba(0, 0, 0, .1);
    backdrop-filter: blur(50px);
    /* display: flex; */
@@ -39,7 +39,7 @@
     max-width: 470px;
     background: linear-gradient(135deg, #cbff46, rgb(40, 166, 82));
     color: #fff;
-    margin: 200px auto 0;
+    margin: 150px auto 0;
     border-radius: 20px;
     padding: 27px 25px;
     text-align: center;
